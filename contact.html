@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2A2A2A',
+                        accent: '#FF6B6B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-shape {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .input-focus-effect {
+            position: relative;
+        }
+        .input-focus-effect::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        .input-focus-effect:focus-within::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-space font-bold gradient-text">Portfolio.</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary hover:text-accent transition-colors">Home</a>
+                    <a href="about.html" class="text-primary hover:text-accent transition-colors">About</a>
+                    <a href="products.html" class="text-primary hover:text-accent transition-colors">Products</a>
+                    <a href="contact.html" class="text-primary hover:text-accent transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="index.html" class="block text-primary hover:text-accent transition-colors">Home</a>
+                <a href="about.html" class="block text-primary hover:text-accent transition-colors">About</a>
+                <a href="products.html" class="block text-primary hover:text-accent transition-colors">Products</a>
+                <a href="contact.html" class="block text-primary hover:text-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="pt-32 pb-20 bg-primary custom-shape relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-accent/20 to-blue-500/20 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxIDAgNiAyLjY5IDYgNnMtMi42OSA2LTYgNi02LTIuNjktNi02IDIuNjktNiA2LTZ6IiBzdHJva2U9IiNmZmYiIG9wYWNpdHk9Ii4yIi8+PC9nPjwvc3ZnPg==')] opacity-10"></div>
+        </div>
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-3xl mx-auto text-center text-white">
+                <h1 class="text-5xl md:text-7xl font-space font-bold mb-6">Get in Touch</h1>
+                <p class="text-xl text-gray-300">Have a question or want to work together? Let's connect!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 -mt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h2 class="text-3xl font-space font-bold mb-8 gradient-text">Contact Information</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent text-xl">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Location</h3>
+                                <p class="text-gray-600">123 Creative Street<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent text-xl">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Email</h3>
+                                <p class="text-gray-600">hello@portfolio.com<br>support@portfolio.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent text-xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Phone</h3>
+                                <p class="text-gray-600">+1 234 567 890<br>+1 234 567 891</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="mt-12">
+                        <h3 class="text-xl font-bold mb-4">Follow Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h2 class="text-3xl font-space font-bold mb-8">Send Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="input-focus-effect">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required
+                                class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:outline-none">
+                            <div id="nameError" class="text-red-500 text-sm mt-1 hidden">Please enter your name</div>
+                        </div>
+                        
+                        <div class="input-focus-effect">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required
+                                class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:outline-none">
+                            <div id="emailError" class="text-red-500 text-sm mt-1 hidden">Please enter a valid email address</div>
+                        </div>
+
+                        <div class="input-focus-effect">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required
+                                class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:outline-none">
+                            <div id="subjectError" class="text-red-500 text-sm mt-1 hidden">Please enter a subject</div>
+                        </div>
+
+                        <div class="input-focus-effect">
+                            <textarea id="message" name="message" placeholder="Your Message" required
+                                class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:outline-none min-h-[150px]"></textarea>
+                            <div id="messageError" class="text-red-500 text-sm mt-1 hidden">Please enter your message</div>
+                        </div>
+
+                        <button type="submit" 
+                            class="w-full bg-primary text-white py-4 rounded-lg hover:bg-accent transition-colors flex items-center justify-center space-x-2 group">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-4 aspect-video">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304603!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645654571619!5m2!1sen!2s"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="rounded-xl">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-space font-bold gradient-text mb-4">Portfolio.</h3>
+                    <p class="text-gray-400">Crafting unique digital experiences and products that leave lasting impressions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-accent">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-accent">About</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-accent">Products</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-accent">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> hello@portfolio.com</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> New York, NY</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Name validation
+            const name = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (!name.value.trim()) {
+                nameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+            }
+
+            // Email validation
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailRegex.test(email.value)) {
+                emailError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            // Subject validation
+            const subject = document.getElementById('subject');
+            const subjectError = document.getElementById('subjectError');
+            if (!subject.value.trim()) {
+                subjectError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                subjectError.classList.add('hidden');
+            }
+
+            // Message validation
+            const message = document.getElementById('message');
+            const messageError = document.getElementById('messageError');
+            if (!message.value.trim()) {
+                messageError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                messageError.classList.add('hidden');
+            }
+
+            if (isValid) {
+                // Here you would typically send the form data to a server
+                alert('Message sent successfully!');
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
