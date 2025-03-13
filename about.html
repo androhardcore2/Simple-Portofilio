@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Digital Technology Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2A2A2A',
+                        accent: '#FF6B6B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-shape {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="font-poppins bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-space font-bold gradient-text">Portfolio.</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary hover:text-accent transition-colors">Home</a>
+                    <a href="about.html" class="text-primary hover:text-accent transition-colors">About</a>
+                    <a href="products.html" class="text-primary hover:text-accent transition-colors">Services</a>
+                    <a href="contact.html" class="text-primary hover:text-accent transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-2xl" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="index.html" class="block text-primary hover:text-accent transition-colors">Home</a>
+                <a href="about.html" class="block text-primary hover:text-accent transition-colors">About</a>
+                <a href="products.html" class="block text-primary hover:text-accent transition-colors">Services</a>
+                <a href="contact.html" class="block text-primary hover:text-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="pt-32 pb-20 bg-primary custom-shape relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-accent/20 to-blue-500/20 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxIDAgNiAyLjY5IDYgNnMtMi42OSA2LTYgNi02LTIuNjktNi02IDIuNjktNiA2LTZ6IiBzdHJva2U9IiNmZmYiIG9wYWNpdHk9Ii4yIi8+PC9nPjwvc3ZnPg==')] opacity-10"></div>
+        </div>
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-3xl mx-auto text-center text-white">
+                <h1 class="text-5xl md:text-7xl font-space font-bold mb-6">About Us</h1>
+                <p class="text-xl text-gray-300">Delivering innovative digital solutions with expertise and passion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-20 -mt-20">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-accent/20 rounded-full blur-3xl"></div>
+                        <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg" alt="Team" class="relative rounded-2xl shadow-lg floating">
+                    </div>
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-space font-bold gradient-text">Our Story</h2>
+                        <p class="text-gray-600 text-lg">We are a team of passionate digital technology experts specializing in web development, mobile applications, and digital marketing solutions. With over 5 years of experience, we've helped numerous businesses transform their digital presence and achieve their goals.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                                <div class="text-3xl text-accent mb-4"><i class="fas fa-code"></i></div>
+                                <h3 class="font-bold text-xl mb-2">Development</h3>
+                                <p class="text-gray-600">Web Development<br>Mobile Apps<br>Custom Solutions</p>
+                            </div>
+                            <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                                <div class="text-3xl text-accent mb-4"><i class="fas fa-chart-line"></i></div>
+                                <h3 class="font-bold text-xl mb-2">Marketing</h3>
+                                <p class="text-gray-600">SEO<br>Social Media<br>Content Strategy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-space font-bold text-center mb-12">Our Expertise</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl text-accent mb-6"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Technical Skills</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> React & Vue.js</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Node.js</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Python</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> React Native</li>
+                    </ul>
+                </div>
+
+                <!-- Design Skills -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl text-accent mb-6"><i class="fas fa-palette"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Design Skills</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> UI/UX Design</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Responsive Design</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Prototyping</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Brand Identity</li>
+                    </ul>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl text-accent mb-6"><i class="fas fa-bullhorn"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Marketing Skills</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> SEO Optimization</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Social Media</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Content Strategy</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Project Management -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl text-accent mb-6"><i class="fas fa-tasks"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Management Skills</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Agile/Scrum</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Team Leadership</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Risk Management</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Client Relations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-space font-bold text-center mb-12">Our Journey</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Experience 1 -->
+                <div class="flex">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-4 h-4 bg-accent rounded-full"></div>
+                        <div class="w-0.5 h-full bg-gray-200"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex-1">
+                        <h3 class="text-xl font-bold mb-2">Digital Solutions Provider</h3>
+                        <p class="text-accent mb-2">2020 - Present</p>
+                        <p class="text-gray-600">Leading digital transformation projects for major clients, delivering web and mobile solutions, and implementing digital marketing strategies.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="flex">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-4 h-4 bg-accent rounded-full"></div>
+                        <div class="w-0.5 h-full bg-gray-200"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex-1">
+                        <h3 class="text-xl font-bold mb-2">Tech Innovation Lead</h3>
+                        <p class="text-accent mb-2">2018 - 2020</p>
+                        <p class="text-gray-600">Developed innovative web and mobile applications, led technical teams, and implemented modern development practices.</p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="flex">
+                    <div class="flex flex-col items-center mr-4">
+                        <div class="w-4 h-4 bg-accent rounded-full"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex-1">
+                        <h3 class="text-xl font-bold mb-2">Digital Marketing Specialist</h3>
+                        <p class="text-accent mb-2">2016 - 2018</p>
+                        <p class="text-gray-600">Started career in digital marketing, focusing on SEO, social media management, and content strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Values -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-space font-bold text-center mb-12">Our Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-4xl text-accent mb-6"><i class="fas fa-star"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Excellence</h3>
+                    <p class="text-gray-600">We strive for excellence in every project, delivering high-quality solutions that exceed expectations.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-4xl text-accent mb-6"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Partnership</h3>
+                    <p class="text-gray-600">We build strong partnerships with our clients, working together to achieve their digital goals.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-4xl text-accent mb-6"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Innovation</h3>
+                    <p class="text-gray-600">We embrace innovation and stay ahead of digital trends to provide cutting-edge solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-space font-bold gradient-text mb-4">Portfolio.</h3>
+                    <p class="text-gray-400">Transforming businesses through innovative digital technology solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-accent">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-accent">About</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-accent">Services</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-accent">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> hello@portfolio.com</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> New York, NY</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-accent text-2xl"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
